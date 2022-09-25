@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<meta charset="utf-8">
+<title>Input your title here</title>
+<style>
+html, body {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.hidden {
+	display: none;
+}
+.container {
+	position: absolute;
+	display: none;
+}
+.background {
+	z-index: -1;
+}
+.bg-size {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+/* <= 9/16*/
+@media (max-aspect-ratio: 375/812) {
+	.container {
+		width: 100%;
+	}
+	.background, .bg-size {
+		width: 100%;
+		height: auto;
+	}
+}
+/* >= 9/16 */
+@media (min-aspect-ratio: 375/812) {
+	.container {
+		height: 100%;
+	}
+	.background, .bg-size {
+		width: auto;
+		height: 100%;
+	}
+}
+
+.container, .background, .bg-size {
+	width: 100%;
+	height: 100%;
+}
+
+
+@keyframes fade-in {
+	from {
+		opacity: 0%;
+	}
+	to {
+		opacity: 100%;
+	}
+}
+@keyframes fade-out {
+	from {
+		opacity: 100%;
+	}
+	to {
+		opacity: 0%;
+	}
+}
+
+@keyframes floating-a {
+	from {
+		transform: translateX(-1vmin) translateY(-1vmin);
+	}
+	to {
+		transform: translateX(1vmin) translateY(1vmin);
+	}
+}
+@keyframes floating-b {
+	from {
+		transform: translateX(-1vmin) translateY(1vmin);
+	}
+	to {
+		transform: translateX(1vmin) translateY(-1vmin);
+	}
+}
+
+.container {
+	transition: opacity 1s ease;
+	animation: fade-in 1s ease both;
+	opacity: 0%;
+}
+
+.delay1 {
+	animation: fade-in 1s 1.5s ease both;
+	opacity: 0%;
+}
+.delay2 {
+	animation: fade-in 1s 3s ease both;
+	opacity: 0%;
+}
+
+#start:checked~#sc1 { display: block; }
+
+#start-1:checked~#sc2 {
+	display: block;
+}
+
+#start-2:checked~#sc3 {
+	display: block;
+}
+
+#start-3:checked~#sc4 {
+	display: block;
+}
+
+#start-4:checked~#sc5 {
+	display: block;
+}
+#a00 {
+	position: absolute;
+	top: 38.834%;
+	left: 15.556%;
+	width: 26.578%;
+	height: 7.348%;
+	animation: floating-a 3s ease-in-out alternate infinite;
+}
+#a01 {
+	position: absolute;
+	top: 52.422%;
+	left: 33.422%;
+	width: 51.200%;
+	height: 4.557%;
+	animation: floating-b 2.5s 0.5s ease-in-out alternate infinite;
+}
+#a02 {
+	position: absolute;
+	top: 61.740%;
+	left: 14.133%;
+	width: 43.378%;
+	height: 8.908%;
+	animation: floating-a 3s 0.5s ease-in-out alternate-reverse infinite;
+}
+#a03 {
+	position: absolute;
+	top: 77.135%;
+	left: 36.267%;
+	width: 48.800%;
+	height: 3.695%;
+	animation: floating-b 2.5s ease-in-out alternate-reverse infinite;
+}
+
+
+#start~input[name=a]:checked~#sc1,
+#start~input[name=a]:checked~#sc2,
+#start~input[name=a]:checked~#sc3,
+#start~input[name=a]:checked~#sc4 {
+	display: none;
+}
+#start~input[name=a]:checked~#sc5 {
+	animation: fade-out 0.5s ease both;
+}
+input[name=a]:checked~#sc6 {
+	display: block;
+}
+#a10 {
+	position: absolute;
+	top: 46.388%;
+	left: 27.289%;
+	width: 31.733%;
+	height: 2.094%;
+	animation: floating-b 2.5s 0.5s ease-in-out alternate infinite;
+}
+#a11 {
+	position: absolute;
+	top: 61.905%;
+	left: 60.178%;
+	width: 31.467%;
+	height: 2.094%;
+	animation: floating-a 3s 0.5s ease-in-out alternate-reverse infinite;
+}
+#a12 {
+	position: absolute;
+	top: 72.66%;
+	left: 6.222%;
+	width: 31.556%;
+	height: 2.094%;
+	animation: floating-b 2.5s ease-in-out alternate-reverse infinite;
+}
+#a13 {
+	position: absolute;
+	top: 85.099%;
+	left: 49.422%;
+	width: 31.556%;
+	height: 2.135%;
+	animation: floating-a 3s ease-in-out alternate infinite;
+}
+
+input[name=b]:checked~#sc6 {
+	animation: fade-out 0.5s ease both;
+}
+input[name=b]:checked~#sc7 {
+	display: block;
+}
+
+#start-7:checked~#sc7 {
+	animation: fade-out 0.5s ease both;
+}
+#start-7:checked~#sc8 {
+	display: block;
+}
+@keyframes rot {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(5deg);
+	}
+}
+.rotating {
+	transform-origin: 50% 75%;
+	animation: rot 3s ease-in-out alternate infinite;
+}
+#a20 {
+	position: absolute;
+	top: 47.865%;
+	left: 12.178%;
+	width: 30.667%;
+	height: 10.222%;
+}
+#a21 {
+	position: absolute;
+	top: 48.85%;
+	left: 60.444%;
+	width: 22.489%;
+	height: 7.225%;
+}
+#a22 {
+	position: absolute;
+	top: 75.862%;
+	left: 16%;
+	width: 21.778%;
+	height: 9.154%;
+}
+#a23 {
+	position: absolute;
+	top: 75.369%;
+	left: 48.889%;
+	width: 36.978%;
+	height: 10.632%;
+}
+
+input[name=c]:checked~#sc8 {
+	animation: fade-out 0.5s ease both;
+}
+input[name=c]:checked~#sc9 {
+	display: block;
+}
+
+#start-9:checked~#sc10 {
+	display: block;
+}
+#a30 {
+	position: absolute;
+	top: 28.571%;
+	left: 33.6%;
+	width: 32.178%;
+	height: 2.094%;
+	animation: floating-a 3s ease-in-out alternate infinite;
+}
+#a31 {
+	position: absolute;
+	top: 45.649%;
+	left: 35.556%;
+	width: 31.822%;
+	height: 2.011%;
+	animation: floating-b 2.5s 0.5s ease-in-out alternate infinite;
+}
+#a32 {
+	position: absolute;
+	top: 61.166%;
+	left: 37.778%;
+	width: 27.822%;
+	height: 2.011%;
+	animation: floating-a 3s 0.5s ease-in-out alternate-reverse infinite;
+}
+#a33 {
+	position: absolute;
+	top: 79.023%;
+	left: 36.889%;
+	width: 39.822%;
+	height: 2.053%;
+	animation: floating-b 2.5s ease-in-out alternate-reverse infinite;
+}
+@keyframes floating-d1 {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(157.143%);
+	}
+}
+@keyframes floating-d2 {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(58.225%);
+	}
+}
+@keyframes floating-d3 {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(83.511%);
+	}
+}
+@keyframes floating-d4 {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(140.082%);
+	}
+}
+#d1 {
+	position: absolute;
+	width: 12.444%;
+	height: 7.307%;
+	top: 25.452%;
+	left: 30.222%;
+	animation: floating-d1 3s ease-in-out alternate infinite;
+}
+#d2 {
+	position: absolute;
+	top: 42.898%;
+	left: 33.778%;
+	width: 20.533%;
+	height: 7.882%;
+	animation: floating-d1 2.5s 0.5s ease-in-out alternate infinite;
+}
+#d3 {
+	position: absolute;
+	top: 56.814%;
+	left: 26.222%;
+	width: 16.711%;
+	height: 7.759%;
+	animation: floating-d1 2.5s ease-in-out alternate infinite;
+}
+#d4 {
+	position: absolute;
+	top: 76.355%;
+	left: 37.333%;
+	width: 17.422%;
+	height: 12.644%;
+	animation: floating-d1 3s 0.5s ease-in-out alternate infinite;
+}
+
+#start~input[name=d]:checked~#sc5,
+#start~input[name=d]:checked~#sc6,
+#start~input[name=d]:checked~#sc7,
+#start~input[name=d]:checked~#sc8,
+#start~input[name=d]:checked~#sc9 {
+	display: none;
+}
+input[name=d]:checked~#sc10 {
+	animation: fade-out 2s ease both;
+}
+input[name=d]:checked~#sc99 {
+	display: block;
+	animation: fade-in 1.5s ease 3s both;
+}
+</style>
+<script type="text/javascript">
+window.addEventListener('load', function() {
+	'use strict';
+	function randInt(n) {
+		return Math.trunc(Math.random() * n);
+	}
+	function concat() {
+		var result = '';
+		for (var idx in arguments) {
+			result = result + arguments[idx].toString();
+		}
+		return result;
+	}
+	function generateResult() {
+		var ansA = parseInt(document.querySelector('[name=a]:checked').value);
+		var ansB = parseInt(document.querySelector('[name=b]:checked').value);
+		var ansC = parseInt(document.querySelector('[name=c]:checked').value);
+		var ansD = parseInt(document.querySelector('[name=d]:checked').value);
+		var n1 = randInt(3)+2, n2 = randInt(10), n3 = randInt(10);
+		console.log(ansA, ansB, ansC, ansD);
+
+		var imageList = [
+			concat('f0', ansA, randInt(2)),
+			concat('e0', randInt(6)),
+			'e40',
+			concat('e1', randInt(7)),
+			concat('e2', randInt(6)),
+			concat('e3', randInt(4)),
+			concat('f1', ansB, randInt(3)),
+			concat('f2', ansC, randInt(3)),
+			concat('f3', ansD, randInt(3)),
+			concat('g', ansA, randInt(3))
+		]
+		console.log(imageList)
+
+		var canvas = document.getElementById(final);
+		var ctx = final.getContext('2d');
+		for (var idx in imageList) {
+			ctx.drawImage(document.getElementById(imageList[idx]), 0, 0);
+		}
+		ctx.drawImage(document.getElementById('x'+n1.toString()), 830, 1290);
+		ctx.drawImage(document.getElementById('x'+n2.toString()), 885, 1290);
+		ctx.drawImage(document.getElementById('x'+n3.toString()), 950, 1290);
+		ctx.lineJoin = 'round';
+		ctx.lineWidth = 7;
+		ctx.strokeRect(947, 1395, 0.1, 0.1);
+		document.getElementById('result').src = final.toDataURL('image/jpeg');
+	}
+	document.getElementsByName('d').forEach(function(elem) {
+		elem.addEventListener('click', generateResult);
+	})
+	document.getElementById('start').checked = 'checked';
+})
+</script>
+<!--link rel="stylesheet" href="style.css" />
+<script type="text/javascript" src="js/preload.min.js"></script>
+<script type="text/javascript" src="js/animate.js"></script>
+<script type="text/javascript" src="js/animate-predefine.js"></script>
+<script type="text/javascript" src="js/story.js"></script>
+<script type="text/javascript" src="js/main.js"></script-->
+</head>
+<body>
+<input class="hidden" type="radio" name="start" id="start">
+<input class="hidden" type="radio" name="start-1" id="start-1">
+<input class="hidden" type="radio" name="start-2" id="start-2">
+<input class="hidden" type="radio" name="start-3" id="start-3">
+<input class="hidden" type="radio" name="start-4" id="start-4">
+<input class="hidden" type="radio" name="start-7" id="start-7">
+<input class="hidden" type="radio" name="start-9" id="start-9">
+<input class="hidden" type="radio" name="a" value="0" id="a1">
+<input class="hidden" type="radio" name="a" value="1" id="a2">
+<input class="hidden" type="radio" name="a" value="2" id="a3">
+<input class="hidden" type="radio" name="a" value="3" id="a4">
+<input class="hidden" type="radio" name="b" value="0" id="b1">
+<input class="hidden" type="radio" name="b" value="1" id="b2">
+<input class="hidden" type="radio" name="b" value="2" id="b3">
+<input class="hidden" type="radio" name="b" value="3" id="b4">
+<input class="hidden" type="radio" name="c" value="0" id="c1">
+<input class="hidden" type="radio" name="c" value="1" id="c2">
+<input class="hidden" type="radio" name="c" value="2" id="c3">
+<input class="hidden" type="radio" name="c" value="3" id="c4">
+<input class="hidden" type="radio" name="d" value="0" id="d1">
+<input class="hidden" type="radio" name="d" value="1" id="d2">
+<input class="hidden" type="radio" name="d" value="2" id="d3">
+<input class="hidden" type="radio" name="d" value="3" id="d4">
+<img class="hidden" src="img/b1.png">
+<div class="container" id="sc1"><label for="start-1"><img src="img/b1.png" class="background"><img src="img/c1.png" class="bg-size delay1"></label></div>
+<div class="container" id="sc2"><label for="start-2"><img src="img/b2.png" class="background"><img src="img/c2.png" class="bg-size delay1"></label></div>
+<div class="container" id="sc3"><label for="start-3"><img src="img/b3.png" class="background"></label></div>
+<div class="container" id="sc4"><label for="start-4"><img src="img/b4.png" class="background"><img src="img/c4.png" class="bg-size delay1"></label></div>
+<div class="container" id="sc5"><img src="img/b5.png" class="background"><img src="img/c5.png" class="bg-size delay1">
+<span class="delay2">
+ <label for="a1"><img src="img/a00.png" id="a00"></label>
+ <label for="a2"><img src="img/a01.png" id="a01"></label>
+ <label for="a3"><img src="img/a02.png" id="a02"></label>
+ <label for="a4"><img src="img/a03.png" id="a03"></label>
+</span>
+</div>
+<div class="container" id="sc6"><img src="img/b6.png" class="background"><img src="img/c6.png" class="bg-size">
+<span class="delay2">
+ <label for="b1"><img src="img/a10.png" id="a10"></label>
+ <label for="b2"><img src="img/a11.png" id="a11"></label>
+ <label for="b3"><img src="img/a12.png" id="a12"></label>
+ <label for="b4"><img src="img/a13.png" id="a13"></label>
+</span>
+</div>
+<div class="container" id="sc7"><label for="start-7"><img src="img/b7.png" class="background"><img src="img/c71.png" class="bg-size delay1"><img src="img/c72.png" class="bg-size delay2"></label></div>
+<div class="container" id="sc8"><img src="img/b8.png" class="background" style="z-index: -1;"><img src="img/c8.png" class="bg-size delay1">
+<span class="delay2">
+ <label for="c1"><img src="img/a20.png" class="rotating" id="a20"></label>
+ <label for="c2"><img src="img/a21.png" class="rotating" id="a21"></label>
+ <label for="c3"><img src="img/a22.png" class="rotating" id="a22"></label>
+ <label for="c4"><img src="img/a23.png" class="rotating" id="a23"></label>
+</span>
+</div>
+<div class="container" id="sc9"><label for="start-9"><img src="img/b9.png" class="background"><img src="img/c9.png" class="bg-size delay1"></label></div>
+<div class="container" id="sc10" style="overflow: hidden;"><img src="img/b10.png" class="background" style="z-index: -1;">
+<span class="delay2">
+ <label for="d1"><img src="img/a30.png" id="a30"></label>
+ <label for="d2"><img src="img/a31.png" id="a31"></label>
+ <label for="d3"><img src="img/a32.png" id="a32"></label>
+ <label for="d4"><img src="img/a33.png" id="a33"></label>
+ <img src="img/d1.png" id="d1">
+ <img src="img/d2.png" id="d2">
+ <img src="img/d3.png" id="d3">
+ <img src="img/d4.png" id="d4">
+</span>
+</div>
+<div class="container" id="sc99">
+ <img id="result" class="background">
+</div>
+<div class="hidden">
+ <img src="img/y0.png" id="x0">
+ <img src="img/y1.png" id="x1">
+ <img src="img/y2.png" id="x2">
+ <img src="img/y3.png" id="x3">
+ <img src="img/y4.png" id="x4">
+ <img src="img/y5.png" id="x5">
+ <img src="img/y6.png" id="x6">
+ <img src="img/y7.png" id="x7">
+ <img src="img/y8.png" id="x8">
+ <img src="img/y9.png" id="x9">
+ <img src="img/e00.png" id="e00">
+ <img src="img/e01.png" id="e01">
+ <img src="img/e02.png" id="e02">
+ <img src="img/e03.png" id="e03">
+ <img src="img/e04.png" id="e04">
+ <img src="img/e05.png" id="e05">
+ <img src="img/e10.png" id="e10">
+ <img src="img/e11.png" id="e11">
+ <img src="img/e12.png" id="e12">
+ <img src="img/e13.png" id="e13">
+ <img src="img/e14.png" id="e14">
+ <img src="img/e15.png" id="e15">
+ <img src="img/e16.png" id="e16">
+ <img src="img/e20.png" id="e20">
+ <img src="img/e21.png" id="e21">
+ <img src="img/e22.png" id="e22">
+ <img src="img/e23.png" id="e23">
+ <img src="img/e24.png" id="e24">
+ <img src="img/e25.png" id="e25">
+ <img src="img/e30.png" id="e30">
+ <img src="img/e31.png" id="e31">
+ <img src="img/e32.png" id="e32">
+ <img src="img/e33.png" id="e33">
+ <img src="img/e40.png" id="e40">
+ <img src="img/f000.png" id="f000">
+ <img src="img/f001.png" id="f001">
+ <img src="img/f010.png" id="f010">
+ <img src="img/f011.png" id="f011">
+ <img src="img/f020.png" id="f020">
+ <img src="img/f021.png" id="f021">
+ <img src="img/f030.png" id="f030">
+ <img src="img/f031.png" id="f031">
+ <img src="img/f100.png" id="f100">
+ <img src="img/f101.png" id="f101">
+ <img src="img/f102.png" id="f102">
+ <img src="img/f110.png" id="f110">
+ <img src="img/f111.png" id="f111">
+ <img src="img/f112.png" id="f112">
+ <img src="img/f120.png" id="f120">
+ <img src="img/f121.png" id="f121">
+ <img src="img/f122.png" id="f122">
+ <img src="img/f130.png" id="f130">
+ <img src="img/f131.png" id="f131">
+ <img src="img/f132.png" id="f132">
+ <img src="img/f200.png" id="f200">
+ <img src="img/f201.png" id="f201">
+ <img src="img/f202.png" id="f202">
+ <img src="img/f210.png" id="f210">
+ <img src="img/f211.png" id="f211">
+ <img src="img/f212.png" id="f212">
+ <img src="img/f220.png" id="f220">
+ <img src="img/f221.png" id="f221">
+ <img src="img/f222.png" id="f222">
+ <img src="img/f230.png" id="f230">
+ <img src="img/f231.png" id="f231">
+ <img src="img/f232.png" id="f232">
+ <img src="img/f300.png" id="f300">
+ <img src="img/f301.png" id="f301">
+ <img src="img/f302.png" id="f302">
+ <img src="img/f310.png" id="f310">
+ <img src="img/f311.png" id="f311">
+ <img src="img/f312.png" id="f312">
+ <img src="img/f320.png" id="f320">
+ <img src="img/f321.png" id="f321">
+ <img src="img/f322.png" id="f322">
+ <img src="img/f330.png" id="f330">
+ <img src="img/f331.png" id="f331">
+ <img src="img/f332.png" id="f332">
+ <img src="img/g00.png" id="g00">
+ <img src="img/g01.png" id="g01">
+ <img src="img/g02.png" id="g02">
+ <img src="img/g10.png" id="g10">
+ <img src="img/g11.png" id="g11">
+ <img src="img/g12.png" id="g12">
+ <img src="img/g20.png" id="g20">
+ <img src="img/g21.png" id="g21">
+ <img src="img/g22.png" id="g22">
+ <img src="img/g30.png" id="g30">
+ <img src="img/g31.png" id="g31">
+ <img src="img/g32.png" id="g32">
+ <canvas id="final" width="1125" height="2436"></canvas>
+</div>
+</body>
+</html>
