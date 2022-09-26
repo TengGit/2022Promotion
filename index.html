@@ -5,6 +5,43 @@
 <meta charset="utf-8">
 <title>测一测你的微宇宙特质</title>
 <style>
+.progress-loading {
+	font-size: 12px;
+}
+
+.progress-container {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+}
+
+.progress-text {
+	font-size: 18px;
+}
+
+#progress-border {
+	width: 30%;
+	margin: auto;
+	padding: 5px;
+	border: 5px solid gray;
+}
+
+.progress-bar {
+	background-color: gray;
+	height: 15px;
+	width: 0%;
+}
+
+.centered > div {
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+}
+
+#progress-container {
+	display: block;
+}
+
 html, body {
 	margin: 0px;
 	padding: 0px;
@@ -376,6 +413,19 @@ input[name=d]:checked~#sc99 {
 }
 </style>
 <script type="text/javascript">
+window.addEventListener('DOMContentLoaded', function() {
+	console.log('DOMContentLoaded');
+	var total = 0, loaded = 0;
+	document.querySelectorAll('img').forEach(function(i) {
+		total++;
+		i.addEventListener('load', function(t, e) {
+			loaded++;
+			console.log('load', t, e, this);
+			document.querySelector('#percent').textContent = loaded + " / " + total;
+			document.querySelector('#progress-bar').style.width = (loaded / total * 100) + "%";
+		});
+	});
+});
 window.addEventListener('load', function() {
 	'use strict';
 	function randInt(n) {
@@ -476,6 +526,18 @@ window.addEventListener('load', function() {
 <input class="hidden" type="radio" name="d" value="1" id="d2">
 <input class="hidden" type="radio" name="d" value="2" id="d3">
 <input class="hidden" type="radio" name="d" value="3" id="d4">
+<div class="container" id="progress-container">
+<div class="centered" style="height: 100%; padding-top: 50%;">
+<div>
+测一测你的微宇宙特质
+</div>
+<div>
+<span class="progress-loading">Loading...</span>
+<span class="progress-text" id="percent">0%</span>
+</div>
+<div id="progress-border"><div class="progress-bar" id="progress-bar"></div></div>
+</div>
+</div>
 <img class="hidden" src="img/b1.png">
 <div class="container" id="sc1"><label for="start-1"><img src="img/b1.png" class="background"><img src="img/c1.png" class="bg-size delay1 controller"></label></div>
 <div class="container" id="sc2"><label for="start-2"><img src="img/b2.png" class="background"><img src="img/c2.png" class="bg-size delay1 controller"></label></div>
