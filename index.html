@@ -426,6 +426,22 @@ window.addEventListener('load', function() {
 	document.getElementsByName('d').forEach(function(elem) {
 		elem.addEventListener('click', generateResult);
 	})
+	document.querySelectorAll('.container').forEach(function(e) {
+		e.addEventListener('animationstart', function() {
+			console.log('disable');
+			document.querySelectorAll('input').forEach(function(e) {
+				e.disabled = true;
+			})
+		})
+	})
+	document.querySelectorAll('.controller').forEach(function(e) {
+		e.addEventListener('animationend', function() {
+			console.log('enable');
+			document.querySelectorAll('input').forEach(function(e) {
+				e.disabled = false;
+			})
+		})
+	})
 	document.getElementById('start').checked = 'checked';
 })
 </script>
@@ -461,38 +477,38 @@ window.addEventListener('load', function() {
 <input class="hidden" type="radio" name="d" value="2" id="d3">
 <input class="hidden" type="radio" name="d" value="3" id="d4">
 <img class="hidden" src="img/b1.png">
-<div class="container" id="sc1"><label for="start-1"><img src="img/b1.png" class="background"><img src="img/c1.png" class="bg-size delay1"></label></div>
-<div class="container" id="sc2"><label for="start-2"><img src="img/b2.png" class="background"><img src="img/c2.png" class="bg-size delay1"></label></div>
-<div class="container" id="sc3"><label for="start-3"><img src="img/b3.png" class="background"></label></div>
-<div class="container" id="sc4"><label for="start-4"><img src="img/b4.png" class="background"><img src="img/c4.png" class="bg-size delay1"></label></div>
+<div class="container" id="sc1"><label for="start-1"><img src="img/b1.png" class="background"><img src="img/c1.png" class="bg-size delay1 controller"></label></div>
+<div class="container" id="sc2"><label for="start-2"><img src="img/b2.png" class="background"><img src="img/c2.png" class="bg-size delay1 controller"></label></div>
+<div class="container controller" id="sc3"><label for="start-3"><img src="img/b3.png" class="background"></label></div>
+<div class="container" id="sc4"><label for="start-4"><img src="img/b4.png" class="background"><img src="img/c4.png" class="bg-size delay1 controller"></label></div>
 <div class="container" id="sc5"><img src="img/b5.png" class="background"><img src="img/c5.png" class="bg-size delay1">
-<span class="delay2">
+<span class="delay2 controller">
  <label for="a1"><img src="img/a00.png" id="a00"></label>
  <label for="a2"><img src="img/a01.png" id="a01"></label>
  <label for="a3"><img src="img/a02.png" id="a02"></label>
  <label for="a4"><img src="img/a03.png" id="a03"></label>
 </span>
 </div>
-<div class="container" id="sc6"><img src="img/b6.png" class="background"><img src="img/c6.png" class="bg-size delay1">
-<span class="delay2">
+<div class="container" id="sc6"><img src="img/b6.png" class="background"><img src="img/c6.png" class="bg-size delay1 controller">
+<span class="delay2 controller">
  <label for="b1"><img src="img/a10.png" id="a10"></label>
  <label for="b2"><img src="img/a11.png" id="a11"></label>
  <label for="b3"><img src="img/a12.png" id="a12"></label>
  <label for="b4"><img src="img/a13.png" id="a13"></label>
 </span>
 </div>
-<div class="container" id="sc7"><label for="start-7"><img src="img/b7.png" class="background"><img src="img/c71.png" class="bg-size delay1"><img src="img/c72.png" class="bg-size delay2"></label></div>
+<div class="container" id="sc7"><label for="start-7"><img src="img/b7.png" class="background"><img src="img/c71.png" class="bg-size delay1"><img src="img/c72.png" class="bg-size delay2 controller"></label></div>
 <div class="container" id="sc8"><img src="img/b8.png" class="background" style="z-index: -1;"><img src="img/c8.png" class="bg-size delay1">
-<span class="delay2">
+<span class="delay2 controller">
  <label for="c1"><img src="img/a20.png" class="rotating" id="a20"></label>
  <label for="c2"><img src="img/a21.png" class="rotating" id="a21"></label>
  <label for="c3"><img src="img/a22.png" class="rotating" id="a22"></label>
  <label for="c4"><img src="img/a23.png" class="rotating" id="a23"></label>
 </span>
 </div>
-<div class="container" id="sc9"><label for="start-9"><img src="img/b9.png" class="background"><img src="img/c9.png" class="bg-size delay1"></label></div>
+<div class="container" id="sc9"><label for="start-9"><img src="img/b9.png" class="background"><img src="img/c9.png" class="bg-size delay1 controller"></label></div>
 <div class="container" id="sc10" style="overflow: hidden;"><img src="img/b10.png" class="background" style="z-index: -1;">
-<span class="delay2">
+<span class="delay2 controller">
  <label for="d1"><img src="img/a30.png" id="a30"></label>
  <label for="d2"><img src="img/a31.png" id="a31"></label>
  <label for="d3"><img src="img/a32.png" id="a32"></label>
