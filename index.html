@@ -9,7 +9,7 @@
 	font-size: 12px;
 }
 
-.progress-container {
+#progress-container {
 	position: absolute;
 	width: 100%;
 	top: 50%;
@@ -428,6 +428,7 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 window.addEventListener('load', function() {
 	'use strict';
+	document.getElementById('progress-container').style.display = 'none';
 	function randInt(n) {
 		return Math.trunc(Math.random() * n);
 	}
@@ -527,7 +528,7 @@ window.addEventListener('load', function() {
 <input class="hidden" type="radio" name="d" value="2" id="d3">
 <input class="hidden" type="radio" name="d" value="3" id="d4">
 <div class="container" id="progress-container">
-<div class="centered" style="height: 100%; padding-top: 50%;">
+<div class="centered" style="height: 100%;">
 <div>
 测一测你的微宇宙特质
 </div>
